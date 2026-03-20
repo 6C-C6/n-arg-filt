@@ -3,6 +3,7 @@
 
 ## This is a program that could reverse the disortion effect info in [filtered]
 
+### test_new.m
 __It may takes a whole day to run, be patient__  
 To start with gather all the frames, you may use ffmpeg to extract the frames.  
 Run `ffmpeg -i "./filtered.mp4" "./filtered/f%04d.png"`, it will have 2565 frames with a total size of about 1.5GB.  
@@ -17,4 +18,13 @@ For each line in one frame, __shifts__ has 2 values, it represents the shift pix
 like `img[n,line]=shift(tar_img[line],shifts[line][first][n])+shift(tar_img[line],shifts[line][second][n])`.  
 Without futher analysis, this 2 values can't be distingushed from each other, i.e. change first to second doesn't matter.  
 
-More things tbd...  
+### multi_harm_reveal.m
+Just need <1min to run.  
+Start from importing **shifts** above.  
+
+This program will trace the base frequency line with a resolution more than FFT can do, based on those harmonics.  
+
+Result is **ft_freqs**, saved as **fine_tuned_revealed_frequencies.csv**.  
+
+
+### More things tbd...
